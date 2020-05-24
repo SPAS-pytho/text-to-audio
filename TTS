@@ -1,12 +1,11 @@
 from gtts import gTTS
-from pygame import mixer
+import playsound
 text=""
 with open("output.txt","r") as file:
      for line in file:
         text=text + line
 
-speech=gTTS(text,'en','slow')
-mixer.init()
-mixer.music.load('smartblindglass.mp3')
-mixer.music.play()
+speech=gTTS(text,'en')
 speech.save("smartblindglass.mp3")
+playsound.playsound("smartblindglass.mp3")
+
